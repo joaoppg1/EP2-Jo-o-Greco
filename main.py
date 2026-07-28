@@ -63,3 +63,17 @@ while jogo_acontecendo:
                 print('Você venceu o jogo!')
                 print(f'Seu prêmio final é de R$ {premio:.2f}')
                 jogo_acontecendo = False
+            else:
+                decisao = input('\nDigite "parar" para sair com o prêmio ou "continuar" para continuar: ')
+
+                while decisao != 'parar' and decisao != 'continuar':
+                    print('Opção inválida!')
+
+                    decisao = input('Digite "parar" ou "continuar": ')
+
+                if decisao == 'parar':
+                    print(f'Você parou com o prêmio de R$ {premio:.2f}!')
+                    jogo_acontecendo = False
+
+                else:
+                    numero_questao += 1
