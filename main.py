@@ -49,7 +49,7 @@ while jogo_acontecendo:
     questao = sorteia_questao_inedita(questoes_por_nivel, nivel, questoes_sorteadas)
 
     respondendo = True
-    ajuda_usada_na_questao = False
+    ajuda_usada = False
     pulou = False
     while respondendo and jogo_acontecendo:
         print(questao_para_texto(questao, numero_questao))
@@ -101,4 +101,11 @@ while jogo_acontecendo:
                 print(f'Você ainda possui {pulos} pulo(s).')
                 respondendo = False
                 input('Aperte ENTER para continuar...')
+        elif (resposta == 'A' or resposta == 'B' or resposta == 'C' or resposta == 'D'):
+            print('Que pena! Você errou e vai sair sem nada :(')
+            respondendo = False
+            jogo_acontecendo = False
+        else:
+            print('Opção inválida!')
+            print('Digite A, B, C, D, ajuda ou pula.')
         
