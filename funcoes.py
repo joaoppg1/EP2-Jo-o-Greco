@@ -78,3 +78,8 @@ def valida_questoes(lista_questoes):
         lista_final.append(valida_questao(questao))
     return lista_final
 
+import random
+
+def sorteia_questao(questoes, nivel):
+    return random.choice(questoes[nivel])
+
