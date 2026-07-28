@@ -102,3 +102,24 @@ def questao_para_texto(questao, id):
     texto += f'C: {questao["opcoes"]["C"]}\n'
     texto += f'D: {questao["opcoes"]["D"]}\n'
     return texto
+
+def gera_ajuda(questao):
+    alternativas_erradas = []
+
+    correta = questao['correta']
+
+    for letra, resposta in questao['opcoes'].items():
+        if letra != correta:
+            alternativas_erradas.append(resposta)
+
+    quantidade = random.randint(1, 2)
+    sorteadas = random.sample(alternativas_erradas, quantidade)
+
+    dica = 'DICA:\nOpções certamente erradas: '
+
+    if quantidade == 1:
+        dica += sorteadas[0]
+    else:
+        dica += sorteadas[0] + ' | ' + sorteadas[1]
+
+    return dica
