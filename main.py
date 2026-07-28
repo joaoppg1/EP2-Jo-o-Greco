@@ -7,6 +7,14 @@ print('\nVamos começar! Aqui vai a primeira questão!')
 print('\nVamos começar com questões do nível FACIL!')
 input('\nAperte ENTER para continuar...')
 
+from funcoes import transforma_base
+from funcoes import valida_questao
+from funcoes import valida_questoes
+from funcoes import sorteia_questao
+from funcoes import sorteia_questao_inedita
+from funcoes import questao_para_texto
+from funcoes import gera_ajuda
+
 from lib_questoes import quest
 premios = [
     1000,
@@ -45,5 +53,8 @@ while jogo_acontecendo:
     pulou = False
     while respondendo and jogo_acontecendo:
         print(questao_para_texto(questao, numero_questao))
-        resposta = input('\nQual sua resposta?! ')
-        
+        resposta = input('\nQual sua resposta?: ')
+        if resposta == questao['correta']:
+            premio = premios[numero_questao - 1]
+            print(f'Resposta correta! Seu prêmio atual é de R$ {premio:.2f}')
+            respondendo = False
