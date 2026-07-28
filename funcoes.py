@@ -154,3 +154,19 @@ numero_questao = 1
 questoes_sorteadas = []
 jogo_acontecendo = True
 
+while jogo_acontecendo:
+
+    if numero_questao <= 3:
+        nivel = 'facil'
+
+    elif numero_questao <= 6:
+        nivel = 'medio'
+
+    else:
+        nivel = 'dificil'
+
+    questao = sorteia_questao_inedita(questoes_por_nivel, nivel, questoes_sorteadas)
+
+    respondendo = True
+    ajuda_usada_na_questao = False
+    pulou = False
