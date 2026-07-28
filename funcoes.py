@@ -123,3 +123,8 @@ def gera_ajuda(questao):
         dica += sorteadas[0] + ' | ' + sorteadas[1]
 
     return dica
+
+nome = input('Qual é o seu nome?:')
+nome = nome.upper()
+print(f'Perfeito, {nome}! Você tem direito a pular 3 questões e pedir ajuda em 2 questões!')
+print('Você pode escolher dentre as opções: A, B, C, D, ajuda, pula ou parar.')
