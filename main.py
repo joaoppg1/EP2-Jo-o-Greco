@@ -58,3 +58,8 @@ while jogo_acontecendo:
             premio = premios[numero_questao - 1]
             print(f'Resposta correta! Seu prêmio atual é de R$ {premio:.2f}')
             respondendo = False
+            if premio == 1000000:
+                print(f'PARABÉNS, {nome.upper()}!')
+                print('Você venceu o jogo!')
+                print(f'Seu prêmio final é de R$ {premio:.2f}')
+                jogo_acontecendo = False
