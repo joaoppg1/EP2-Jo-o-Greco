@@ -68,7 +68,6 @@ while jogo_acontecendo:
 
                 while decisao != 'parar' and decisao != 'continuar':
                     print('Opção inválida!')
-
                     decisao = input('Digite "parar" ou "continuar": ')
 
                 if decisao == 'parar':
@@ -77,3 +76,19 @@ while jogo_acontecendo:
 
                 else:
                     numero_questao += 1
+                    if numero_questao == 4:
+                        print('Agora vamos para questões do nível MEDIO!')
+
+                    elif numero_questao == 7:
+                        print('Agora vamos para questões do nível DIFICIL!')
+                        input('Aperte ENTER para continuar...')
+        elif resposta == 'ajuda':
+            if ajuda_usada == True:
+                print('Você já pediu ajuda nesta questão!')
+            elif ajudas == 0:
+                print('Você não tem mais ajudas disponíveis!')
+            else:
+                print(gera_ajuda(questao))
+                ajudas -= 1
+                ajuda_usada = True
+                print(f'Você ainda possui {ajudas} ajuda(s).')
