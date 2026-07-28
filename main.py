@@ -92,3 +92,13 @@ while jogo_acontecendo:
                 ajudas -= 1
                 ajuda_usada = True
                 print(f'Você ainda possui {ajudas} ajuda(s).')
+        elif resposta == 'pula':
+            if pulos == 0:
+                print('Você não tem mais pulos disponíveis!')
+            else:
+                pulos -= 1
+                print('Você pulou a questão!')
+                print(f'Você ainda possui {pulos} pulo(s).')
+                respondendo = False
+                input('Aperte ENTER para continuar...')
+        
